@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerar Etiquetas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header class="header">
+        <img src="{{ url_for('static', filename='images/portobello_logo.png') }}" alt="Logo da Empresa">
+    </header>
+
+    <div class="container-etiqueta">
+        <h2>Pesquisar Máquina<br> para gerar etiqueta:</h2>
+        <form class="host-label" action="{{ url_for('etiquetas') }}" method="POST">
+            <!-- <label for="id_maquina"><strong>ID da Máquina:</strong></label> -->
+            <input type="text" id="id_maquina" name="id_maquina" required placeholder="Digite o ID da máquina">
+            <p><button class="button-etiqueta" type="submit">Gerar Etiqueta</button></p>
+        </form>
+
+        <!-- <h3 class="host-label">Ou gerar etiquetas em massa:</h3> -->
+        <form action="{{ url_for('etiquetas_massa') }}" method="POST">
+            <button class="button-etiqueta" type="submit">Gerar Etiquetas em Massa</button>
+        </form>
+    </div>
+</body>
+
+</html>

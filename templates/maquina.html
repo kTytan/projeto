@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Máquina</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header class="header">
+        <img src="{{ url_for('static', filename='images/portobello_logo.png') }}" alt="Logo da Empresa">
+    </header>
+
+    <div class="container">
+        <h1>Detalhes da Máquina</h1>
+
+        <p class="host">
+            <span class="host-label"><strong>Host Name:</strong></span>
+            <span class="host-result"> {{ maquina["ID"] }}</span>
+        </p>
+
+        <p class="user">
+            <span class="usuario-label"><strong>Usuário:</strong></span>
+            <span class="usuario-result">{{ maquina["Usuario"] }}</span>
+        </p>
+
+        <p class="machine">
+            <span class="machine-label"><strong>Nome da maquina:</strong></span>
+            <span class="machine-result">{{ maquina["Nome"] }}</span>
+        </p>
+
+        <p class="spec">
+            <span class="spec-label"><strong>Especificações:</strong></span>
+            <span class="spec-result">{{ maquina["Especificacoes"] }}</span>
+        </p>
+
+        <p class="local">
+            <span class="local-label"><strong>Localização:</strong></span>
+            <span class="local-result">{{ maquina["Localizacao"] }}</span>
+        </p>
+
+        <div class="link-container-estudos">
+            <a href="https://portobello.atlassian.net/wiki/external/ZWE4ZjEwMDRhYjQxNDRmZWI1MDAyYjExNjY1M2FlNjk"
+                target="_blank">Material
+                de apoio. Considere dar uma olhada antes de abrir um chamado.</a>
+        </div>
+        <div class="link-container-help">
+            <a href="https://help.portobello.com.br/" target="_blank">Clique aqui para abrir um chamado no HelpDesk</a>
+        </div>
+
+        <img src="{{ caminho_qr }}" alt="QR Code" class="qr-code">
+    </div>
+</body>
+
+</html>
